@@ -1,0 +1,3 @@
+8 : 8 có thể vẫn là root.
+4 : cây {8,9} size 2 có thể được gắn vào cây root 4 có size 4 lớn hơn.
+0 : tương tự, cây root 0 có size 4 nên có thể gắn.

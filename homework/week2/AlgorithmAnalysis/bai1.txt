@@ -1,0 +1,49 @@
+1.4.1
+
+1. BƯỚC CƠ SỞ (N = 3):
+- Với một tập hợp có 3 phần tử, chỉ có duy nhất 1 cách chọn ra 3 phần tử (chọn toàn bộ tập hợp).
+- Theo công thức:
+  S(3) = 3*(3 - 1)*(3 - 2) / 6 = (3 * 2 * 1) / 6 = 1
+- Công thức đúng với N = 3.
+
+
+2. GIẢ THIẾT QUY NẠP:
+- Giả sử công thức đúng với N = k (k >= 3), nghĩa là số cách chọn 3 phần tử từ k phần tử là:
+  S(k) = k*(k - 1)*(k - 2) / 6
+
+
+3. BƯỚC QUY NẠP:
+- Ta cần chứng minh số cách chọn 3 phần tử từ (k + 1) phần tử là:
+  S(k + 1) = (k + 1)*k*(k - 1) / 6
+
+- Xét tập hợp có (k + 1) phần tử: A = {x1, x2, ..., xk, x_(k+1)}.
+  Khi chọn 3 phần tử từ tập này, có 2 trường hợp rời nhau:
+
+  + Trường hợp 1: Bộ ba KHÔNG chứa phần tử mới x_(k+1).
+    Cả 3 phần tử đều được lấy từ k phần tử đầu tiên {x1, x2, ..., xk}.
+    Theo giả thiết quy nạp, số cách chọn là:
+    S(k) = k*(k - 1)*(k - 2) / 6
+
+  + Trường hợp 2: Bộ ba CÓ chứa phần tử mới x_(k+1).
+    Vì phần tử x_(k+1) đã cố định, ta cần chọn thêm 2 phần tử nữa từ k phần tử còn lại.
+    Số cách chọn 2 phần tử từ k phần tử bằng:
+    k*(k - 1) / 2
+
+- Tổng số cách chọn 3 phần tử từ (k + 1) phần tử là:
+  S(k + 1) = S(k) + k*(k - 1) / 2
+           = [k*(k - 1)*(k - 2) / 6] + [k*(k - 1) / 2]
+
+- Quy đồng mẫu số chung là 6:
+  S(k + 1) = [k*(k - 1)*(k - 2) + 3*k*(k - 1)] / 6
+
+- Đặt nhân tử chung k*(k - 1):
+  S(k + 1) = k*(k - 1)*[(k - 2) + 3] / 6
+           = k*(k - 1)*(k + 1) / 6
+           = (k + 1)*k*(k - 1) / 6
+
+Công thức hoàn toàn đúng với N = k + 1.
+
+
+KẾT LUẬN:
+Theo nguyên lý quy nạp toán học, số các bộ ba phần tử chọn từ N phần tử luôn bằng:
+N*(N - 1)*(N - 2) / 6 (với mọi N >= 3).

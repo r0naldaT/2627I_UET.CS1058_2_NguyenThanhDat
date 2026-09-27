@@ -1,0 +1,18 @@
+a) Cấu trúc dữ liệu gồm 1 thành phần liên thông ( có n - 1 nhánh nối với 0)
+
+b) Vì ko thay đổi leader[q] nên
+    union(0, 1) đổi hết id trùng với 0 sang id của 1 nên có 1 lần cập nhật mảng: {0, 1}, {2}, {3}, ...
+    union(0, 2) đổi hết id trùng vói 0 sang id của 2 nên có 2 lần cập nhật của 0 và 1 sang 2: {0, 1, 2}, {3}, ..
+    union(0, 3) tương tự nên có 3 lần cập nhật: {0, 1, 2, 3}, {4}, ...
+    ....
+    union(0, n - 1) có n - 1 lần cập nhật: {0, 1, 2, ..., n - 1}
+
+    Vậy có 1 + 2 + 3+ ...+ (n -1)  = n(n-1) / 2  ~ n^2;
+
+c) Sau chuỗi union với quick-union ko thay đổi parent[q] thì cây sẽ là 0-> 1-> 2-> 3-> ...-> n - 1
+    find(0) sẽ phải đi từ (n - 1) xuống 0 nên Θ(n - 1) ~ Θ(n)
+
+d) Sau chuỗi union với weighted quick-union thì cây sẽ là           0
+                                                                 / / \  \
+                                                                1 2  ...  n-1
+  Vì 0 là root nên find(0) là Θ(1)

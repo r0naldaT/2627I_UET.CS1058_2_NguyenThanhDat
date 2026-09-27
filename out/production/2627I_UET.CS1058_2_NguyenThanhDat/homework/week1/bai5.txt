@@ -1,0 +1,5 @@
+Vì toàn bộ cây gốc 5 có kích thước 10 nhưng cây 0 có kích thước 7
+nên Theo quy tắc link-by-size, một nút con chỉ được nối vào nút cha
+nếu kích thước của nó không vượt quá một nửa kích thước của cha tại
+thời điểm nối (để chứa được cây con kích thước 7 làm nhánh con, cây
+gốc 5 tối thiểu phải có 7 + 7 = 14 > 10 phần tử), dẫn đến mâu thuẫn.

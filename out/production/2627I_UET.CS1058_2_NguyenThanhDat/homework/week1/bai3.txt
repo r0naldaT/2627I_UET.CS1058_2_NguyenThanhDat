@@ -1,0 +1,4 @@
+Với mỗi cặp, tưởng tượng xóa cạnh nối cuối cùng để tách cây thành 2 component,
+sau đó kiểm tra nếu thực hiện union(p,q) theo weighted quick-union
+(cây nhỏ gắn vào cây lớn; bằng size thì root(q) → root(p)) có tạo lại đúng cây ban đầu hay không.
+Các cặp thỏa điều kiện là: (2,3), (4,0), (4,5), (5,7), (6,4), (8,9).

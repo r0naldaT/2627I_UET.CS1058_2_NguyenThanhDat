@@ -1,0 +1,36 @@
+1.4.5
+
+a. N + 1 ~ N
+b. 1 + 1/N ~ 1
+  Khi N -> vo cung, 1/N tien ve 0.
+  Do do, bieu thuc tien dan ve hang so 1.
+
+c. (1 + 1/N)(1 + 2/N) ~ 1
+  Khai trien: (1 + 1/N)(1 + 2/N) = 1 + 3/N + 2/(N^2).
+  Khi N -> vo cung, cac so hang 3/N va 2/(N^2) deu tien ve 0.
+  Gia tri bieu thuc tien ve 1.
+
+d. 2N^3 - 15N^2 + N ~ 2N^3
+
+--------------------------------------------------
+e. lg(2N)/lgN ~ 1
+  Ta co: lg(2N) = lg(2) + lg(N) = 1 + lg(N)
+  (1 + lgN) / lgN = 1 + 1/lgN.
+  Khi N -> vo cung, lg(N) -> vo cung nen 1/lgN -> 0.
+  Gioi han bang 1.
+
+--------------------------------------------------
+f. lg(N^2 + 1)/lgN ~ 2
+  Ta co: lg(N^2 + 1) = lg(N^2 * (1 + 1/(N^2))) = lg(N^2) + lg(1 + 1/(N^2))
+                      = 2*lgN + lg(1 + 1/(N^2)).
+  Chia cho lg(N):
+  [2*lgN + lg(1 + 1/(N^2))] / lgN = 2 + [lg(1 + 1/(N^2)) / lgN].
+  Khi N -> vo cung, lg(1 + 1/(N^2)) -> lg(1) = 0 nen so hang thu hai tien ve 0.
+  Gioi han bang 2.
+
+--------------------------------------------------
+g. N^100 / 2^N ~ 0
+- Giai thich:
+  Ham mu 2^N tang truong nhanh hon rat nhieu so voi bat ky ham da thuc N^k nao (o day k = 100).
+  Theo quy tac L'Hopital hoac so sanh bac tang truong:
+  lim (N^100 / 2^N) = 0 khi N -> vo cung.

@@ -1,0 +1,21 @@
+Ở trong phần cài đặt union này,việc để leader[i] == leader[p] có thể gây ra lỗi vì
+giá trị leader[p] có thể đã bị thay đổi trước đó, vậy nên điều kiện leader[i] hiện tại có thể lại đang là của
+leader[q], gây ra tình trạng  các id trùng với leader[p] ban đầu ko dc đổi sang leader[q]
+Vd: [0, 1, 1, 0, 1], union(0, 4)
+    i = 0: leader[0] == leader[0] -> leader[0] = leader[4] = 1;
+    Mảng hiện tại [1, 1, 1, 0, 1]
+    i = 1: leader[1] = leader[0] -> leader[1] = leader[0] = 1; // câu lệnh này thừa
+    i = 2: leader[2] = leader[0] -> leader[2] = leader[0] = 1; // câu lệnh này thừa
+    i = 3: leader[3] != leader[0] -> leader[3] vẫn giữ nguyên;
+    i = 4: giống i = 1 và i = 2;
+    Mảng cuối cùng [1, 1, 1, 0, 1];
+    -> Sai;
+
+Cách khắc phục:
+    public void union(int p, int q){
+        int pid = leader[p];
+        int qid = leader[q];
+        for(int i = 0; i < leader.length; i++){
+            if (leader[i] == pid){
+                leader[i] = qid;
+            }

@@ -1,0 +1,18 @@
+Xét i và j:
+    Giả sử n = 2:
+    Khi i = 0: j bắt đầu từ 0 + 1 = 1, chạy đến nhỏ hơn 4:
+        Cặp (i, j) là: (0, 1), (0, 2), (0, 3) -> 3 lần
+    Khi i = 1: j bắt đầu từ 1 + 1 = 2:
+        Cặp (i, j) là: (1, 2), (1, 3) -> 2 lần
+    Khi i = 2: j bắt đầu từ 2 + 1 = 3:
+        Cặp (i, j) là: (2, 3) -> 1 lần
+    Khi i=3: j bắt đầu từ 3+1=4. Điều kiện j<4 sai ngay lập tức → 0 lần.
+    ->Tổng số lần chạy khi giới hạn bằng 4 là: 3 + 2 + 1 = 6 lần
+
+    Vậy quy luât: Nếu giới hạn là một số M bất kỳ,
+                    số lần chạy luôn là tổng lùi dần về 1:(M - 1) + (M - 2) + ... + 2 + 1 = (M-1)*M/2
+    -> Vòng lặp của i và j : (n^2-1)*n^2/2 = (n^4 - n^2)/2
+
+Xét k : k tự nhân 2 với chính nó -> log2(n)
+
+--> Vậy log2(n) * (n^4 - n^2)/2 ~ n^4 * log2(n)

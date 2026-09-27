@@ -1,0 +1,37 @@
+1.4.6
+
+a.
+- Bac tang: ~ N
+- Giai thich:
+  + Vong lap ngoai chay qua cac gia tri cua n: N, N/2, N/4, N/8, ..., 1.
+  + Vong lap trong moi lan lap thuc hien dung n phep toan sum++.
+  + Tong so lan thuc hien sum++ la:
+    Total = N + N/2 + N/4 + N/8 + ... + 1
+          = N * (1 + 1/2 + 1/4 + 1/8 + ...)
+  + Day la tong cua mot cap so nhan lui vo han voi cong boi q = 1/2:
+    1 + 1/2 + 1/4 + ... = 2.
+  + Do do, tong so phep toan xap xi bang 2N (hay ~ 2N), bac tang la O(N).
+
+b.
+- Bac tang: ~ N
+- Giai thich:
+  + Vong lap ngoai chay voi i nhan cac gia tri luy thua cua 2:
+    i = 1, 2, 4, 8, ..., cho den luy thua lon nhat nho hon N.
+  + Vong lap trong thuc hien dung i phep toan sum++.
+  + Tong so lan thuc hien sum++ la tong day so:
+    Total = 1 + 2 + 4 + 8 + ... + 2^k  (voi 2^k < N)
+  + Theo cong thuc tong cap so nhan:
+    1 + 2 + 4 + ... + 2^k = 2^(k+1) - 1.
+  + Vi 2^k la luy thua lon nhat cua 2 nho hon N, nen 2^(k+1) xap xi bang N (chinh xac la nam trong khoang [N, 2N)).
+  + Do do, tong so phep toan ti le tuyen tinh voi N, bac tang la O(N).
+
+c.
+- Bac tang: ~ N log N (hay O(N log N))
+- Giai thich:
+  + Vong lap ngoai: bien i bat dau tu 1 va nhan doi sau moi buoc (i *= 2) cho den khi i >= N.
+    So lan lap cua vong ngoai bang khoang: log2(N).
+  + Vong lap trong: bien j chay tu 0 den N - 1, thuc hien doc lap voi bien i.
+    Moi lan vong ngoai chay, vong trong luon thuc hien dung N phep toan sum++.
+  + Tong so lan thuc hien sum++ la:
+    Total = N * log2(N).
+  + Do do, bac tang cua thoi gian chay la O(N log N).

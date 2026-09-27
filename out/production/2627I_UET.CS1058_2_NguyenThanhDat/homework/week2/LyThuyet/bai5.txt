@@ -1,0 +1,14 @@
+Phân tích vòng lặp trong cùng (k):
+    Biến k xuất phát từ 1, kết thúc khi vượt quá n
+    Mỗi bước, k tăng thêm một lượng cố định là n/100
+    Tổng quãng đường k cần đi là từ 1 đến n (độ dài khoảng n)
+    -> Số bước nhảy (số lần lặp) của vòng k xấp xỉ là: n/(n/100) = 100
+Phân tích hai vòng lặp ngoài (i và j):
+    Khi i = 1: j chạy từ n lùi về 1 -> có n lần.
+    Khi i=2: j chạy từ n lùi về 2 → có n−1 lần.
+    ...
+    Khi i = n: j chạy từ n lùi về n -> có 1 lần.
+
+    ->Tổng: n+(n-1)+..+1= n(n+1)/2 ~ n^2 /2
+
+--> Tổng : ~ n^2/2 * 100 = 50n^2

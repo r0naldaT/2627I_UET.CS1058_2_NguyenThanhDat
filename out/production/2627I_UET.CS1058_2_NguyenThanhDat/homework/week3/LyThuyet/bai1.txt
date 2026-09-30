@@ -1,0 +1,62 @@
+a)
+Chuỗi thao tác:
+enqueue(0), enqueue(1), dequeue(), enqueue(2), enqueue(3), dequeue(), enqueue(4), enqueue(5),
+dequeue(), enqueue(6), enqueue(7), dequeue()
+
+Thao tác 1-3:
+enqueue(0) -> [0]
+enqueue(1) -> [0, 1]
+dequeue()   -> lấy 0 ra, còn lại [1]
+=> In lần 1: 1
+
+Thao tác 4-6:
+enqueue(2) -> [1, 2]
+enqueue(3) -> [1, 2, 3]
+dequeue()   -> lấy 1 ra, còn lại [2, 3]
+=> In lần 2: 2 3
+
+Thao tác 7-9:
+enqueue(4) -> [2, 3, 4]
+enqueue(5) -> [2, 3, 4, 5]
+dequeue()   -> lấy 2 ra, còn lại [3, 4, 5]
+=> In lần 3: 3 4 5
+
+Thao tác 10-12:
+enqueue(6) -> [3, 4, 5, 6]
+enqueue(7) -> [3, 4, 5, 6, 7]
+dequeue()   -> lấy 3 ra, còn lại [4, 5, 6, 7]
+=> In lần 4: 4 5 6 7
+
+=> ĐÁP ÁN: 1 2 3 3 4 5 4 5 6 7.
+
+b)
+Thao tác enqueue của self-printing queue chứa n phần tử có thời gian chạy trong trường hợp tồi nhất là Θ(n)
+
+Giải thích:
+Việc thêm một phần tử vào cuối danh sách liên kết mất thời gian O(1). Tuy nhiên, trường hợp tồi nhất xảy ra
+khi thao tác enqueue này là thao tác thứ 3k (chu kỳ in). Lúc này, queue phải duyệt và in ra toàn bộ n phần
+tử hiện có, dẫn đến độ phức tạp là Θ(n).
+
+c)
+Thời gian chạy trung bình (amortized) trên mỗi thao tác đối với n thao tác enqueue và dequeue trên một
+hàng đợi loại self-printing queue ban đầu rỗng là Θ(n)
+
+Giải thích:
+
+Trường hợp xấu nhất xảy ra khi toàn bộ n thao tác đều là enqueue().
+
+Cứ sau mỗi 3 thao tác, queue sẽ in toàn bộ phần tử:
+
+Thao tác thứ 3: in 3 phần tử  -> tốn chi phí c * 3
+
+Thao tác thứ 6: in 6 phần tử  -> tốn chi phí c * 6
+
+...
+
+Thao tác thứ 3k: in 3k phần tử -> tốn chi phí c * 3k (với k chạy đến n/3)
+
+Tổng thời gian chạy cho toàn bộ n thao tác:
+T(n) = Sum_{k=1}^{n/3} (3k) = 3 * (n/3 * (n/3 + 1)) / 2 = Θ(n^2)
+
+Thời gian amortized trên mỗi thao tác:
+T(n) / n = Θ(n^2) / n = Θ(n)
